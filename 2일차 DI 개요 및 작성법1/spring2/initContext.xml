@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+<bean id="mBean"  class="spring2.MessageBeanImplDI">
+    <constructor-arg index="0">
+       <value>대한민국</value>
+    </constructor-arg>
+    <constructor-arg index="1">
+       <value>서울</value>
+    </constructor-arg>
+    <property name="greeting">
+         <value>안녕,</value>
+    </property>
+    <property name="outF">
+        <ref bean="outFile" />
+    </property>
+</bean>
+
+<!-- spring2패키지의 OutFileImpl클래스의 객체를 id값인 outFile이름으로 가져다 달라 
+   setFilePath(c:/webtest/good.txt) 메서드를 호출하는 문장-->
+<bean id="outFile"  class="spring2.OutFileImpl">
+  <property name="filePath">
+     <value>c:/webtest/good.txt</value>
+  </property>
+</bean>
+
+
+
+</beans>
+
+
+
+

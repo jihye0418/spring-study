@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+
+<!--spring3  -->
+<bean id="moniter" class="spring3.SystemMoniter"
+p:periodTime="10"
+p:sender-ref="smsSender">
+	<!--<property name="periodTime">
+		<value>10</value>
+	</property>
+	<property name="sender">
+		<ref bean="smsSender"/>
+	</property>  -->
+</bean>
+
+<!-- id값으로 마땅히 부여할 이름이 없으면 보통 관례로 클래스명으로 준다. 단, 첫글자는 소문자! -->
+<bean id="smsSender" class="spring3.SmsSender"/>
+
+
+
+<!--spring4  -->
+<!-- 생성자 injection 
+	index를 부여하지 않으면 입력 순서대로 적용이 된다.
+-->
+
+<!-- 방법1)
+	<constructor-arg>
+		<value>10</value>
+	</constructor-arg>
+	<constructor-arg>
+		<ref bean="smsSender2"></ref> 
+	</constructor-arg>
+ -->
+ 
+ <!-- 방법2)
+ 	<constructor-arg value="10"/>
+	<constructor-arg ref="smsSender2"/>
+  -->
+
+<!-- 방법3) -->
+<bean id="moniter2" class="spring4.SystemMoniter"
+c:periodTime="10"
+c:sender-ref="smsSender2">
+</bean>
+<bean id="smsSender2" class="spring4.SmsSender"/>
+
+
+<!--spring5 ) 
+	축약하기 전 코딩
+<bean id="moniter3" class="spring5.SystemMoniter"
+p:periodTime="10">
+	<property name="sender">
+		<ref bean="smsSender3"/>
+	</property>
+</bean>
+
+<bean id="smsSender3" class="spring5.SmsSender">
+	<constructor-arg value="true"/>
+</bean>
+-->
+<!-- 축약 후 코딩 -->
+<bean id="moniter3" class="spring5.SystemMoniter"
+p:periodTime="10">
+	<property name="sender">
+		<bean id="smsSender3" class="spring5.SmsSender">
+			<constructor-arg value="true"/>
+		</bean>
+	</property>
+</bean>
+
+
+<!--spring6  -->
+
+
+<!--spring7  -->
+
+
+<!--spring8  -->
+</beans>
