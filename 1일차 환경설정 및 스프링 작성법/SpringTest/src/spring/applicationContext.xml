@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<!-- 개발자가 필요로 하는 객체를 생성
+		자바에서의 객체 생성 방법 : 클래스명 객체명 = new 클래스명()
+		스프링에서의 객체 생성 방법 : 
+		<bean id="객체구분인자" class="패키지명...생성하고자하는 클래스명"></bean>
+		★id는 객체 이름이 아니다. 객체를 구분하는 인자로 사용하는 것!★
+	 -->
+	 <!-- <bean id="test" class="spring.Message1"/> -->
+	 <bean id="test2" class="spring.Message2"/>
+	 <!--spring패키지의 Message2를 사용하고 싶으면 id test2를 사용해라
+	 	Message1을 보고 싶다면 Message1를 Message1으로 바꾸면 된다. (id는 변경하지 않음)
+	 -->
+</beans>
