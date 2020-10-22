@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!-- 
+	@Component가 있는 클래스들이 어느 패키지에 들어가 있는지를 찾아서 등록시켜줄 수 있도록
+	환경설정을 해야 한다. 
+	=> context 네임스페이스를 이용해서 처리.
+ -->
+ <context:component-scan base-package="com.spring.anno5"></context:component-scan>
+ 
+<!-- @Required,@Autowired,@Resource 
+<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+<bean id="camera" class="com.spring.anno5.Camera"/>
+<bean id="camera2" class="com.spring.anno5.Camera2"/>
+<bean id="homeController2" class="com.spring.anno5.HomeController2"/>
+
+ -->
+
+
+</beans>
