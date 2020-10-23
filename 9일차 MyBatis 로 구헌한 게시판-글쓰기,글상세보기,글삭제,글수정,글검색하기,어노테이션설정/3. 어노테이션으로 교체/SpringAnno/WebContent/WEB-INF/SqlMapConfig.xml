@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+ <!-- typeAliases은 상위패키지명.하위패키지...불러올 클래스명(별칭을 부여할 수있는 태그)
+        mappers은 접속시 불러올 테이블에 대한 정보 xml파일을 지정해줄때 사용하는 태그-->
+ <configuration>
+    <typeAliases>
+        <typeAlias type="lee.BoardCommand"   alias="board" />
+    </typeAliases>
+    
+    <mappers>
+           <mapper resource="lee/Board.xml" />
+    </mappers>
+ </configuration>
